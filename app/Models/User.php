@@ -58,4 +58,10 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+
+    public function isBanned()
+    {
+        return $this->hasMany(UserBann::class, "user_id");
+    }
 }
